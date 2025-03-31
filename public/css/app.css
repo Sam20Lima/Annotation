@@ -29,19 +29,32 @@ header{
     background: var(--a-color);
 }
 header .head_left img{
-    width: 250px;
+    width: 110px;
     cursor: pointer;
+    margin-right: 10px;
+}
+header div.head_right{
+    display: flex;
+}
+header div.head_right a button.btn_login{
+    margin-left: 5px;
 }
 button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid var(--c-color);
     border-radius: 5px;
-    padding: 15px 20px;
+    padding: 15px 10px;
     background: transparent;
     color: var(--c-color);
     font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
     text-transform: uppercase;
+}
+a{
+    text-decoration: none;
 }
 button:hover{
     background: var(--c-color);
@@ -95,16 +108,15 @@ section.home_pg br{
 section.form_pg{
     padding-top: 75px !important;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
 }
 
 section.form_pg div.form_left{
-    width: 60%;
+    width: 100%;
 }
 
 section.form_pg div.form_right{
-    width: 40%;
+    width: 100%;
     background: var(--b-color);
     border: 1px solid var(--f-color);
     border-radius: 5px;
@@ -156,6 +168,25 @@ div.form_right form span a:hover{
     section.home_pg br{
         display: block;
     }
+    section.form_pg{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    section.form_pg div.form_left{
+        width: 60%;
+        margin-right: 50px;
+    }
+    
+    section.form_pg div.form_right{
+        width: 40%;
+    }
+    button{
+        padding: 15px 20px;
+    }
+    header .head_left img{
+        width: 180px;
+    }
 }
 @media (min-width: 1200px){
     header,
@@ -168,5 +199,17 @@ div.form_right form span a:hover{
     }
     p.subtitle{
         font-size: 24px;
+    }
+    section.form_pg div.form_left{
+        width: 60%;
+    }
+    section.form_pg div.form_right{
+        width: 40%;
+    }
+    button{
+        padding: 15px 20px;
+    }
+    header .head_left img{
+        width: 180px;
     }
 }

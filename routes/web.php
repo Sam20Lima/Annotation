@@ -15,5 +15,13 @@ route::post('/criar-conta', function () {
 })->name('insert-account');
 
 route::get('/login', function () {
-    //return view('login');
+    return view('login');
 })->name('login');
+
+route::post('/login', function () {
+    return 'Validação do login!';
+})->name('auth');
+
+route::get('/esqueceu-senha', function () {
+    // return view('login');
+})->name('forgot-password');
