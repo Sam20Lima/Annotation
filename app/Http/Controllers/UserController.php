@@ -34,6 +34,8 @@ class UserController extends Controller
             'email' => 'required|min:5|max:255|email|unique:users',
             'password' => 'required|min:8|max:255',
         ]);
+        $strongPassword = $user->validatePassword($validated['password']);
+
         $user = $user->fill($validated);
         $user->password = Hash::make($validated['password']);
         $user->save();

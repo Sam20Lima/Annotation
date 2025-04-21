@@ -9,18 +9,18 @@
         <div class="form_right">
             <form method="POST" action="{{ route('insert-account') }}">
                 @csrf
-                <input type="text" name="name" placeholder="Seu nome" value="{{ old('name') }}" class="@error('name') field_error @enderror">
                 @error('name')
-                    <p>{{ $message }}</p>
+                    <p class="field_error">{{ $message }}</p>
+                @enderror
+                <input type="text" name="name" placeholder="Seu nome" value="{{ old('name') }}" class="@error('name') field_error @enderror">
+                @error('email')
+                    <p class="field_error">{{ $message }}</p>
                 @enderror
                 <input type="text" name="email" placeholder="Seu e-mail" value="{{ old('email') }}" class="@error('email') field_error @enderror">
-                @error('email')
-                    <p>{{ $message }}</p>
+                @error('password')
+                    <p class="field_error">{{ $message }}</p>
                 @enderror
                 <input type="password" name="password" placeholder="Sua senha" value="{{ old('password') }}" class="@error('password') field_error @enderror">
-                @error('password')
-                    <p>{{ $message }}</p>
-                @enderror
                 <span>Ja tem uma conta? <a href="{{ route('login') }}">Entrar</a></span>
                 <x-button class='btn_full' linkto='insert-account'>Criar nova conta</x-button>
             </form>
