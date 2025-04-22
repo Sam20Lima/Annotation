@@ -32,12 +32,12 @@ class UserController extends Controller
         $validated = $request->validate([
             'name' => 'required|min:2|max:255',
             'email' => 'required|min:5|max:255|email|unique:users',
-            'password' => 'required|min:8|max:255',
+            'password' => 'required|min:8|max:255'
         ]);
         $strongPassword = $user->validatePassword($validated['password']);
 
         $user = $user->fill($validated);
-        $user->password = Hash::make($validated['password']);
+        $user->password = Hash::make($strongPassword);
         $user->save();
         return 'Usuário cadastrado com sucesso!';
     }
