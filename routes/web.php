@@ -12,7 +12,10 @@ route::get('/criar-conta', [UserController::class, 'create'])->name('create-acco
 route::post('/criar-conta', [UserController::class, 'store'])->name('insert-account');
 
 route::get('/login', [AuthController::class, 'index'])->name('login');
-route::post('/login', [AuthController::class, 'loginAttempts'])->name('auth');
+
+Route::middleware(['throttle:login-attempts'])->group(function () {
+    route::post('/login', [AuthController::class, 'loginAttempts'])->name('auth');
+});
 route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth'])->group(function () {
