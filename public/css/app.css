@@ -40,6 +40,58 @@ header div.head_right{
 header div.head_right a button.btn_login{
     margin-left: 5px;
 }
+header div.head_right div.menu_profile{
+    position: relative;
+}
+div.menu_profile div.user_picture{
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+    background: var(--b-color);
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--f-color);
+    border-radius: 50%;
+    box-shadow: 0px 3px 6px var(--f-color);
+    color: var(--c-color);
+    cursor: pointer;
+} 
+header div.head_right div.menu_profile nav{
+    background: var(--b-color);
+    position: absolute;
+    right: 0px;
+    top: 51px;
+    width: 175px;
+    border-radius: 5px;
+    border: 1px solid var(--f-color);
+    box-shadow: 0px 3px 6px var(--g-color);
+    display: none;
+}
+header div.head_right div.menu_profile:hover nav{
+    display: block;
+}
+div.head_right nav div.user_info{
+    padding: 10px 15px;
+    color: var(--e-color);
+    border-bottom: 2px solid var(--f-color);
+}
+div.head_right nav ul{
+    list-style-type: none;
+    padding-bottom: 5px;
+
+}
+div.head_right nav ul li{
+
+}
+div.head_right nav ul li a{
+    display: block;
+    padding: 10px 15px;
+    color: var(--d-color);
+}
+div.head_right nav ul li a:hover{
+    background: var(--a-color);
+}
 button{
     display: flex;
     justify-content: center;

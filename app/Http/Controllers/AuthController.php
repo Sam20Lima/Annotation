@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller
 {
     public function index(){
+        if (Auth::user()){
+            return redirect()->route('dashboard');
+        }
         return view('login');
     }
     public function loginAttempts(Request $request){
