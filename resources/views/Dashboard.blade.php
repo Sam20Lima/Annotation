@@ -1,9 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="home_pg">
-        <!-- <h1 class="title">Que tal organizar sua rotina semanal <br>com nosso serviço de <span>anotações</span></h1>
-        <p class="subtitle">Com nossa ferramenta, você vai poder criar, organizar e gerenciar <br>todas as suas tarefas de forma totalmente gratuita</p>
-        <x-button class='btn_create' linkto='create-account'>COMEÇAR HOJE MESMO!</x-button> -->
+    <section class="dash_pg">
+        <div class="deash_header">
+            <x-button class='btn_create' linkto='create-account'>
+                CRIAR ANOTAÇÃO
+                <x-fluentui-notepad-edit-16-o />
+            </x-button>
+        </div>
     </section>
+    <x-modal>
+        <div class="modal_header">
+            <h1>Criar nova anotação</h1>
+            <x-vaadin-close />
+        </div>
+        <div class="modal_content">
+            <form method="POST" action="{{ route('insert-account') }}">
+                @csrf
+                @error('title')
+                    <p class="field_error">{{ $message }}</p>
+                @enderror
+                <input class ="full_width" type="text" name="title" placeholder="Titulo" value="{{ old('title') }}" class="@error('title') field_error @enderror">
+               <x-button class='btn_full' linkto='insert-account'>Criar nova anitação</x-button>
+            </form>
+        </div>
+    </x-modal>
 @endsection

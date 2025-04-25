@@ -14,9 +14,11 @@
     --g-color: #222222;
     --h-color: red;
     --shadow-color: rgba(51, 51, 51, .16);
+    --mask-color: rgba(0, 0, 0, .80);
 }
 header,
 section.home_pg,
+section.dash_pg,
 section.form_pg{
     padding: 0px 15px;
 }
@@ -140,6 +142,7 @@ p.subtitle{
     margin-bottom: 30px;
 }
 section.home_pg,
+section.dash_pg,
 section.form_pg{
     background: linear-gradient(to bottom, var(--a-color), var(--b-color));
     width: 100vw;
@@ -158,12 +161,16 @@ section.home_pg br{
     display: none;
 }
 
-section.form_pg{
+section.form_pg,
+section.dash_pg{
     padding-top: 75px !important;
     display: flex;
     flex-direction: column;
 }
-
+section.form_pg{
+    display: flex;
+    flex-direction: column;
+}
 section.form_pg div.form_left{
     width: 100%;
 }
@@ -179,7 +186,7 @@ section.form_pg div.form_right form{
     display: flex;
     flex-direction: column;
 }
-div.form_right form input{
+form input{
     background: var(--g-color);
     border: 1px solid var(--f-color);
     border-radius: 5px;
@@ -188,13 +195,16 @@ div.form_right form input{
     font-size: 16px;
     margin-bottom: 20px;
 }
-div.form_right form input:focus{
+form input:focus{
     outline: none;
     border: 1px solid var(--c-color);
 }
 
-div.form_right form input.field_error{
+form input.field_error{
     border: 1px solid var(--h-color);
+}
+form input.full_width{
+    width: 100%;
 }
 p.field_error{
     color: var(--h-color);
@@ -228,9 +238,46 @@ div.form_right form span a:hover{
     text-decoration: underline;
 }
 
+section.dash_pg div.deash_header{
+    display: flex;
+    justify-content: flex-end;
+}
+div.box_modal{
+    width: 100vw;
+    height: 100vh;
+    background: var(--mask-color);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+div.box_modal div.modal{
+    width: 100vw;
+    height: 100vh;
+    background: var(--b-color);
+    border-radius: 5px;
+}
+div.box_modal div.modal div.modal_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--f-color);
+}
+div.box_modal div.modal div.modal_header h1{
+    color: var(--c-color);
+    font-size: 25px;
+    font-weight: normal;
+}
+div.box_modal div.modal div.modal_header svg{
+    color: var(--c-color);
+}
+div.box_modal div.modal div.modal_content,
+div.box_modal div.modal div.modal_header{
+    padding: 25px 15px;
+}
 @media (min-width: 900px){
     header,
     section home_pg,
+    section.dash_pg,
     section.form_pg{
         padding: 0px 60px;
     }
@@ -262,10 +309,20 @@ div.form_right form span a:hover{
     header .head_left img{
         width: 180px;
     }
+    div.box_modal{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    div.box_modal div.modal{
+        width: 550px;
+        height: auto;
+        background: var(--b-color);
 }
 @media (min-width: 1200px){
     header,
-    section home_pg,
+    section.home_pg,
+    section.dash_pg,
     section.form_pg{
         padding: 0px 120px;
     }
