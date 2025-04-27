@@ -3,16 +3,16 @@
 @section('content')
     <section class="dash_pg">
         <div class="deash_header">
-            <x-button class='btn_create' linkto='create-account'>
+            <x-button class='btn_create' linkto='#' id="btn-create-annotation">
                 CRIAR ANOTAÇÃO
-                <x-fluentui-notepad-edit-16-o />
+                <x-fluentui-notepad-edit-16-o/>
             </x-button>
         </div>
     </section>
     <x-modal>
         <div class="modal_header">
             <h1>Criar nova anotação</h1>
-            <x-vaadin-close />
+            <x-vaadin-close id="close-modal"/>
         </div>
         <div class="modal_content">
             <form method="POST" action="{{ route('insert-account') }}">
@@ -26,3 +26,20 @@
         </div>
     </x-modal>
 @endsection
+
+@push('scripts')
+    <script>
+        const btnCreateAnnotation = document.getElementById('btn-create-annotation')
+        const boxModal = document.getElementById('box-modal')
+        const closeModal = document.getElementById('close-modal')
+
+        btnCreateAnnotation.addEventListener('click',(event) => {
+            event.preventDefault();
+            boxModal.classList.add('opened');
+        })
+        closeModal.addEventListener('click',(event) => {
+            event.preventDefault();
+            boxModal.classList.remove('opened');
+        })
+    </script>
+@endpush
