@@ -8,9 +8,20 @@
                 <x-fluentui-notepad-edit-16-o/>
             </x-button>
         </div>
-        @foreach ($tasks as $task)
-            <p>{{ $task->title }}</p>
-        @endforeach
+        <div class="box_tasks">
+            @foreach($tasks as $task)
+                <x-task id="{{$task->id}}" title="{{$task->title}}">
+                    
+                    @foreach ($task->taskItems as $taskItem)
+                        <div class="task_item">
+                            <input type="checkbox" name="is_marked" value="{{ $taskItem->is_marked }}" />
+                            <span>{{ $taskItem->content }}</span>
+                        </div>
+                    @endforeach
+
+                </x-task>
+            @endforeach
+        </div>
     </section>
     <x-modal>
         <div class="modal_header">

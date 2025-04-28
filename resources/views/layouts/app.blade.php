@@ -6,8 +6,9 @@
 
         <title>Laravel</title>
 
-        <!-- style css -->
+        <!-- style css --> 
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/task.css') }}" rel="stylesheet">
 
     </head>
     <body>

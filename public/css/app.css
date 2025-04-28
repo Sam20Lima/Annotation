@@ -277,6 +277,11 @@ div.box_modal div.modal div.modal_content,
 div.box_modal div.modal div.modal_header{
     padding: 25px 15px;
 }
+div.box_tasks{
+    display: grid;
+    justify-content: center;
+    gap: 30px;
+}
 
 @keyframes open-modal{
     from{
@@ -330,6 +335,10 @@ div.box_modal div.modal div.modal_header{
         width: 550px;
         height: auto;
         background: var(--b-color);
+    }
+    div.box_tasks{
+        grid-template-columns: repeat(3, auto);
+    }
 }
 @media (min-width: 1200px){
     header,
@@ -356,5 +365,7 @@ div.box_modal div.modal div.modal_header{
     header .head_left img{
         width: 180px;
     }
-}
+    div.box_tasks{
+        grid-template-columns: repeat(3, auto);
+    }
 }
