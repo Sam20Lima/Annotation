@@ -22,7 +22,7 @@
                 @enderror
                 <input type="password" name="password" placeholder="Sua senha" value="{{ old('password') }}" class="@error('password') field_error @enderror">
                 <span>Ja tem uma conta? <a href="{{ route('login') }}">Entrar</a></span>
-                <x-button class='btn_full' linkto='insert-account'>Criar nova conta</x-button>
+                <x-button class='btn_fullwidth' linkto='insert-account'>Criar nova conta</x-button>
             </form>
         </div>
     </section>

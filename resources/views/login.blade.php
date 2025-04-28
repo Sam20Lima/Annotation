@@ -12,7 +12,7 @@
                 <input type="text" name="email" placeholder="Seu e-mail" value="{{ old('email') }}">
                 <input type="password" name="password" placeholder="Sua senha">
                 <span><a href="{{ route('forgot-password') }}">Esqueceu sua senha?</a></span>
-                <x-button class='btn_full' linkto='auth'>
+                <x-button class='btn_fullwidth' linkto='auth'>
                     Entrar
                     <x-simpleline-login />
                 </x-button>

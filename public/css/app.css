@@ -83,9 +83,6 @@ div.head_right nav ul{
     padding-bottom: 5px;
 
 }
-div.head_right nav ul li{
-
-}
 div.head_right nav ul li a{
     display: block;
     padding: 10px 15px;
@@ -125,7 +122,7 @@ button.btn_login{
 button.btn_login:hover{
     opacity: 1;
 }
-button.btn_full{
+button.btn_fullwidth{
     width: 100%;
 }
 h1.title{
