@@ -8,6 +8,9 @@
                 <x-fluentui-notepad-edit-16-o/>
             </x-button>
         </div>
+        @foreach ($tasks as $task)
+            <p>{{ $task->title }}</p>
+        @endforeach
     </section>
     <x-modal>
         <div class="modal_header">
