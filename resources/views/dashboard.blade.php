@@ -35,7 +35,7 @@
                     <p class="field_error">{{ $message }}</p>
                 @enderror
                 <input class ="full_width" type="text" name="title" placeholder="Titulo" value="{{ old('title') }}" class="@error('title') field_error @enderror">
-               <x-button class='btn_fullwidth' linkto='store-task'>Criar nova anitação</x-button>
+               <x-button class='btn_fullwidth' linkto='store-task'>Criar nova anotação</x-button>
             </form>
         </div>
     </x-modal>

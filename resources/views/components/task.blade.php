@@ -29,20 +29,15 @@
     </div>
 
     <div class="modal_content">
-        <form method="POST" action="{{route('store-task')}}">
-            @csrf
-
-            @error('content')
-                <p class="field_error">{{ $message }}</p>
-            @enderror
-            <input class="fullwidth" type="text" name="content" placeholder="Item" value="{{old('content')}}" class="@error('content') field_error @enderror"/>
-
-            <input type="hidden" name="task_id" value="{{ $id }}" />
-            <input type="hidden" name="is_marked" value="{{ App\Models\TaskItem::IS_NOT_MARKED }}" />
-
-            <x-button class='btn_fullwidth' linkto='store-task'>Criar novo item</x-button>
-        </form>
-    </div>
+            <form method="POST" action="{{ route('store-task') }}">
+                @csrf
+                @error('title')
+                    <p class="field_error">{{ $message }}</p>
+                @enderror
+                <input class ="full_width" type="text" name="title" placeholder="Titulo" value="{{ old('title') }}" class="@error('title') field_error @enderror">
+               <x-button class='btn_fullwidth' linkto='store-task'>Criar nova anotação</x-button>
+            </form>
+        </div>
 </x-modal>
 
 @pushOnce('scripts')

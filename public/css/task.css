@@ -12,6 +12,8 @@ div.task{
 
 div.task:hover{
     transform: scale(1.02);
+    border: 1px solid var(--c-color);
+    transition: 0.6s;
 }
 
 div.task div.task_header{
