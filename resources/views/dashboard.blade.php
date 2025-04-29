@@ -2,12 +2,15 @@
 
 @section('content')
     <section class="dash_pg">
-        <div class="deash_header">
-            <x-button class='btn_create' linkto='#' id="btn-create-annotation">
-                CRIAR ANOTAÇÃO
-                <x-fluentui-notepad-edit-16-o/>
+        <div class="dash_header">
+            <h1>Minhas Anotações</h1>
+
+            <x-button class='btn_login' linkto='#' id="btn-create-annotation">
+                Criar anotação
+                <x-gmdi-edit-note-o />
             </x-button>
         </div>
+
         <div class="box_tasks">
             @foreach($tasks as $task)
                 <x-task id="{{$task->id}}" title="{{$task->title}}">
@@ -23,19 +26,23 @@
             @endforeach
         </div>
     </section>
-    <x-modal>
+
+    <x-modal id="box-modal">
         <div class="modal_header">
-            <h1>Criar nova anotação</h1>
-            <x-vaadin-close id="close-modal"/>
+            <h1>Criar anotação</h1>
+            <x-vaadin-close id="close-modal" />
         </div>
+
         <div class="modal_content">
-            <form method="POST" action="{{ route('store-task') }}">
+            <form method="POST" action="{{route('store-task')}}">
                 @csrf
+
                 @error('title')
                     <p class="field_error">{{ $message }}</p>
                 @enderror
-                <input class ="full_width" type="text" name="title" placeholder="Titulo" value="{{ old('title') }}" class="@error('title') field_error @enderror">
-               <x-button class='btn_fullwidth' linkto='store-task'>Criar nova anotação</x-button>
+                <input class="fullwidth" type="text" name="title" placeholder="Título" value="{{old('title')}}" class="@error('title') field_error @enderror"/>
+
+                <x-button class='btn_fullwidth' linkto='store-task'>Criar nova anotação</x-button>
             </form>
         </div>
     </x-modal>
@@ -45,13 +52,14 @@
     <script>
         const btnCreateAnnotation = document.getElementById('btn-create-annotation')
         const boxModal = document.getElementById('box-modal')
-        const closeModal = document.getElementById('close-modal')
+        const iconCloseModal = document.getElementById('close-modal')
 
-        btnCreateAnnotation.addEventListener('click',(event) => {
+        btnCreateAnnotation.addEventListener('click', (event) => {
             event.preventDefault();
             boxModal.classList.add('opened');
         })
-        closeModal.addEventListener('click',(event) => {
+
+        iconCloseModal.addEventListener('click', (event) => {
             event.preventDefault();
             boxModal.classList.remove('opened');
         })

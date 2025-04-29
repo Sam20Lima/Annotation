@@ -236,10 +236,17 @@ div.form_right form span a:hover{
     text-decoration: underline;
 }
 
-section.dash_pg div.deash_header{
+section.dash_pg div.dash_header{
     display: flex;
     justify-content: flex-end;
+    padding-bottom: 10px;
 }
+section.dash_pg div.dash_header h1{
+    color: var(--d-color);
+    font-weight: normal;
+    font-size: 20px;
+}
+
 div.box_modal{
     width: 100vw;
     height: 100vh;

@@ -27,7 +27,6 @@
         <h1>Adicionar item</h1>
         <x-vaadin-close id="close-modal-task-item" />
     </div>
-
     <div class="modal_content">
             <form method="POST" action="{{ route('store-task') }}">
                 @csrf

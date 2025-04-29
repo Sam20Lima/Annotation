@@ -1,5 +1,7 @@
-<div class="box_modal" id="box-modal">
-    <div class="modal">
-        {{ $slot }}
-    </div>
+@props(['id'     => '', 'taskid' => ''])
+
+<div class="box_modal" id="{{ $id }}" data-task-id="{{ $taskid }}">
+  <div class="modal">
+    {{ $slot }}
+  </div>
 </div>
