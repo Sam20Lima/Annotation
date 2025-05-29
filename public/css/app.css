@@ -21,6 +21,12 @@ section.home_pg,
 section.dash_pg,
 section.form_pg{
     padding: 0px 15px;
+    width: 100%;
+}
+section.home_pg,
+section.dash_pg,
+section.form_pg{
+    padding-bottom: 15px;
 }
 header{
     display: flex;
@@ -142,8 +148,8 @@ section.home_pg,
 section.dash_pg,
 section.form_pg{
     background: linear-gradient(to bottom, var(--a-color), var(--b-color));
-    width: 100vw;
-    height: calc(100vh - 80px);
+    width: 100%;
+    min-height: calc(100vh - 80px); /* já tem calc, beleza */
     
 }
 
@@ -240,9 +246,10 @@ section.dash_pg div.dash_header{
     display: flex;
     justify-content: flex-end;
     padding-bottom: 10px;
+    justify-content: space-between;
 }
 section.dash_pg div.dash_header h1{
-    color: var(--d-color);
+    color: var(--c-color);
     font-weight: normal;
     font-size: 20px;
 }
@@ -305,6 +312,12 @@ div.box_tasks{
     section.dash_pg,
     section.form_pg{
         padding: 0px 60px;
+        width: 100%;
+    }
+    section home_pg,
+    section.dash_pg,
+    section.form_pg{
+        padding-bottom: 15px;
     }
     h1.title{
         font-size: 40px;
@@ -354,6 +367,14 @@ div.box_tasks{
     section.dash_pg,
     section.form_pg{
         padding: 0px 120px;
+        width: 100%;
+    }
+    section.home_pg,
+    section.dash_pg,
+    section.form_pg{
+        min-height: auto;
+        padding-bottom: 15px;
+        height: 100vh;
     }
     h1.title{
         font-size: 46px;
